@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Product from '../../screens/product'
+import Product from '../../screens/Product'
 import SignUp from '../../screens/SignUp'
 import Login from '../../screens/Login'
 import SingleProduct from '../../screens/SingleProduct'
