@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import SingleProduct from './SingleProduct';
+import { useNavigate } from 'react-router-dom';
 
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
@@ -18,6 +21,12 @@ const Product = () => {
         setLoading(false);
       });
   }, []);
+
+
+  function singleProductPage(){
+    navigate('single-product');
+  }
+
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-50 to-white p-6">
@@ -49,7 +58,7 @@ const Product = () => {
                   <p className="mt-2 text-gray-600 truncate">{item.description}</p>
                   <div className="mt-4 flex items-center justify-between">
                     <span className="text-lg font-semibold text-blue-500">${item.price}</span>
-                    <button className="btn btn-outline btn-primary">Add to Cart</button>
+                    <button onClick={singleProductPage} className="btn btn-outline btn-primary">Show Details...</button>
                   </div>
                 </div>
               </div>
