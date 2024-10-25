@@ -5,7 +5,7 @@ const SignUp = () => {
   return (
     <>
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md mt-5">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md mt-[120px]">
         <h2 className="text-3xl font-bold text-center text-gray-900">Create Your Account</h2>
         <form className="space-y-6">
           <div className="form-control">

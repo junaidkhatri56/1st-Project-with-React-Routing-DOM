@@ -16,6 +16,8 @@ const Routing = () => {
               <Route path='signup' element={<SignUp/>}/>
               <Route path='login' element={<Login/>}/>
               <Route path='single-product' element={<SingleProduct/>}/>
+              <Route path="/single-product/:id" element={<SingleProduct />} />
+
         </Routes>      
       </BrowserRouter>    
     </>

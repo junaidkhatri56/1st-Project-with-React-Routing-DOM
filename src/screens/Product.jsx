@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SingleProduct from './SingleProduct';
 import { useNavigate } from 'react-router-dom';
 
+
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,14 +24,14 @@ const Product = () => {
   }, []);
 
 
-  function singleProductPage(){
-    navigate('single-product');
+  function singleProductPage(id){
+    navigate(`/single-product/${id}`);
   }
 
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-50 to-white p-6">
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-[100px]">
         {/* Loading Spinner */}
         {loading && (
           <div className="flex justify-center items-center min-h-[50vh]">
@@ -58,7 +59,7 @@ const Product = () => {
                   <p className="mt-2 text-gray-600 truncate">{item.description}</p>
                   <div className="mt-4 flex items-center justify-between">
                     <span className="text-lg font-semibold text-blue-500">${item.price}</span>
-                    <button onClick={singleProductPage} className="btn btn-outline btn-primary">Show Details...</button>
+                    <button onClick={()=> singleProductPage(item.id)} className="btn btn-outline btn-primary">Show Details...</button>
                   </div>
                 </div>
               </div>
